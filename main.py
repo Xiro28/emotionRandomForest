@@ -1,6 +1,7 @@
 from forest import RandomForest
 import joblib
 import pathlib
+from utils import write_to_file
 
 import pandas as pd
 import numpy as np
@@ -53,7 +54,9 @@ if __name__ == "__main__":
     imagesData = np.array(imagesData)
     imagesLabel = np.array(imagesLabel)
 
-    rf = RandomForest()
+    rf = RandomForest(max_depth=100 ,n_jobs=1)
 
     rf.fit(imagesData, imagesLabel)
+
+    write_to_file(rf, "model.joblib")
 

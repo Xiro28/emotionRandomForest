@@ -119,7 +119,7 @@ class Node():
         test_funcs = [threshold1, threshold2, threshold3, threshold4]
 
         # Random training process.
-        for _ in xrange(n_rounds):
+        for _ in range(n_rounds):
 
             # Choose a test function randomly.
             i = random_state.randint(0, len(test_funcs) - 1)
